@@ -1,2 +1,2 @@
 # buttchat
-Learning project for 
+## Learning project for chat app
