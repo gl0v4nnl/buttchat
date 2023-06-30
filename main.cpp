@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     
     while (!exit) {
         getline(std::cin, newq);
-        exit = uquest.check(newq);
+        exit = uquest.reply(newq);
     }
     
     return 0;
