@@ -2,20 +2,29 @@
 #define QNA_H
 
 #include <string>
+#include <vector>
+#include <regex>
 #include <map>
 
+using namespace std;
+
 class qna {
-    std::map<std::string, std::string> qmap = {
+    map<string, string> qmap = {
         {"exit", "bye"},
         {"start", "let's go"},
         {"hello", "hi"},
+        {"how (are you|is it going)", "Alright"},
+        {"who are you", "I'm a Buttman"},
     };
     int count = 0;  
-    const int last_number = 3;  
+    const int last_number = 3; 
+    vector<string> words;
+
+    void split(const string &s, char delim);
 public:
-    bool add(std::string new_question, std::string new_answer);
-    bool reply(std::string check_string);
-    bool remove(std::string rem_question);
+    bool add(string new_question, string new_answer);
+    bool reply(string text);
+    bool remove(string rem_question);
 };
 
 #endif
