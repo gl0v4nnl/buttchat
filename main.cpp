@@ -4,13 +4,13 @@
 #include "qna.h"
 
 int main(int argc, char *argv[]) {
-    qna uquest;
+    qna bot;
     std::string newq;
     bool exit = false;
     
     while (!exit) {
         getline(std::cin, newq);
-        exit = uquest.reply(newq);
+        exit = bot.reply(newq);
     }
     
     return 0;
