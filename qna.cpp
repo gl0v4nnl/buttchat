@@ -1,6 +1,6 @@
-#include "qna.h"
 #include <iostream>
 #include <iterator>
+#include "qna.h"
 
 
 bool qna::add(std::string new_question, std::string new_answer) {
@@ -13,11 +13,12 @@ bool qna::add(std::string new_question, std::string new_answer) {
     return ret;
 }
 
-bool qna::check(std::string check_string) {
+bool qna::reply(std::string check_string) {
     bool ret = false;
     auto iter = qmap.find(check_string);
     if (iter != qmap.end()) {
         std::cout << iter->second << std::endl;
+        count++;
         if (iter->first == "exit") 
             ret = true;
     }
