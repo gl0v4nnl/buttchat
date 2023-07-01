@@ -1,4 +1,5 @@
 #include <iostream>
+#include <boost/asio.hpp>
 
 #include "main.h"
 #include "qna.h"
@@ -6,11 +7,11 @@
 int main(int argc, char *argv[]) {
     qna bot;
     std::string newq;
-    bool exit = false;
+    //bool exit = false;
     
-    while (!exit) {
+    while (true) {
         getline(std::cin, newq);
-        exit = bot.reply(newq);
+        cout << bot.reply(newq) << endl;
     }
     
     return 0;

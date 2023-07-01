@@ -6,6 +6,8 @@
 #include "qna.h"
 using namespace std;
 
+string tmp_string;
+
 void qna::split(const string &s, char delim) {
     stringstream ss(s);
     string item;
@@ -24,8 +26,8 @@ bool qna::add(string new_question, string new_answer) {
     return ret;
 }
 
-bool qna::reply(string text) {
-    bool ret = false;
+string qna::reply(string text) {
+    tmp_string.clear();
 #if 0
     split(text, ' ');
 
@@ -48,12 +50,14 @@ bool qna::reply(string text) {
         
         if (regex_match(text, phrase)) {
             cout << element.second << endl;
-            if (element.first == "exit")
-                ret = true;
+            if (element.first == "exit") {
+                string tmp = element.second;
+                tmp_string.push_back(*(char *)tmp.c_str());
+            }
         }
     }
 #endif
-    return ret;
+    return tmp_string;
 }
 
 bool qna::remove(string rem_question) {

@@ -23,7 +23,7 @@ class qna {
     void split(const string &s, char delim);
 public:
     bool add(string new_question, string new_answer);
-    bool reply(string text);
+    string reply(string text);
     bool remove(string rem_question);
 };
 
